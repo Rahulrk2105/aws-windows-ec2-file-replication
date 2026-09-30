@@ -73,7 +73,7 @@ aws sts get-caller-identity
 Result confirmed:
 
 ``` text
-arn:aws:sts::742563278558:assumed-role/Mum-Iam/i-0e1f0cec4065cc4cb
+arn:aws:sts::<account-id>:assumed-role/Mum-Iam/<instance-id>
 ```
 
 ### Hyderabad
@@ -93,7 +93,7 @@ aws sts get-caller-identity
 Result confirmed:
 
 ``` text
-arn:aws:sts::742563278558:assumed-role/hyd-iam-role/i-0eda3e566dc2a343
+arn:aws:sts::<account-id>:assumed-role/Mum-Iam/<instance-id>
 ```
 
 The Hyderabad role was given scoped access to `hyd-bkt-2` and the
