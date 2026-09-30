@@ -19,29 +19,8 @@ EC2 instance in Hyderabad.
 
 ## Architecture
 
-``` text
-Mumbai Region                         Hyderabad Region
+<img width="1774" height="887" alt="image" src="https://github.com/user-attachments/assets/2164343b-1899-415a-9ac4-4c133084d575" />
 
-Windows EC2                           Windows EC2
-C:\TEST                               C:\TEST
-    |                                     ^
-    | AWS CLI                              | AWS CLI
-    v                                     |
-mum-main-bkt  ───── S3 CRR ─────>  hyd-bkt-2
-ap-south-1                         ap-south-2
-```
-
-### Data flow
-
-``` text
-Mumbai EC2
-    ↓
-Mumbai S3
-    ↓ S3 Cross-Region Replication
-Hyderabad S3
-    ↓
-Hyderabad EC2
-```
 
 No VPC peering, VPN, or Transit Gateway is required for the file
 replication path.
@@ -131,6 +110,12 @@ Two S3 buckets were created:
   Mumbai (`ap-south-1`)      `mum-main-bkt`
   Hyderabad (`ap-south-2`)   `hyd-bkt-2`
 
+<img width="1546" height="866" alt="image" src="https://github.com/user-attachments/assets/1be3205b-820d-446f-b173-b1d6da38fa44" />
+
+
+<img width="1554" height="515" alt="image" src="https://github.com/user-attachments/assets/8df95a29-c22e-400c-b6c2-bea9553f151d" />
+
+
 S3 Versioning was enabled on both buckets.
 
 The project uses the `TEST/` prefix:
@@ -139,6 +124,9 @@ The project uses the `TEST/` prefix:
 mum-main-bkt/TEST/
 hyd-bkt-2/TEST/
 ```
+
+<img width="1538" height="735" alt="image" src="https://github.com/user-attachments/assets/3ff017d9-2790-4eae-bb66-eb42da0c23d8" />
+
 
 ------------------------------------------------------------------------
 
@@ -166,6 +154,9 @@ instances without depending entirely on RDP.
 # 5. Mumbai File Upload
 
 The Mumbai EC2 contains:
+
+<img width="1584" height="855" alt="image" src="https://github.com/user-attachments/assets/51a7d503-3b63-447c-b7f8-a5d5208b0872" />
+
 
 ``` text
 C:\TEST
@@ -312,6 +303,9 @@ Output:
 ``` text
 Hello from Mumbai EC2 - CRR test
 ```
+
+<img width="804" height="186" alt="image" src="https://github.com/user-attachments/assets/b862c73b-a682-4b4a-a4cd-4b2f36aa481b" />
+
 
 ------------------------------------------------------------------------
 
